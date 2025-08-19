@@ -1,0 +1,426 @@
+
+html ,body{
+  overflow-x: hidden;
+  
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+[id] {
+  scroll-margin-top: 80px;
+}
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #fafafa;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(51, 51, 51, 0.9);
+  backdrop-filter: blur(8px);
+  padding: 12px 20px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  transition: background 0.3s ease, padding 0.3s ease;
+}
+
+header.scrolled {
+  background: rgba(33, 33, 33, 0.95);
+  padding: 8px 20px;
+}
+
+.logo img {
+  height: 45px;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+  transform: scale(1.05);
+}
+
+nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  padding: 6px 0;
+  transition: color 0.3s ease;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 0;
+  background: #ff9800;
+  transition: width 0.3s ease;
+  border-radius: 2px;
+}
+
+nav a:hover {
+  color: #ff9800;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+.menu-btn {
+  display: none;
+  font-size: 25px;
+  color: white;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  nav {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 200px;
+    background: rgba(51, 51, 51, 0.95);
+    flex-direction: column;
+    padding: 10px 0;
+    border-radius: 0 0 8px 8px;
+    overflow-y: auto;
+    transform: translateX(100%); 
+    transition: transform 0.3s ease;
+  }
+
+  nav.show {
+    transform: translateX(0);
+  }
+
+  nav a {
+    padding: 10px 20px;
+    border-bottom: 1px solid #444;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+}
+
+.section {
+  padding: 60px 15px;
+  min-height: 100vh;
+  scroll-margin-top: 80px; 
+}
+
+section:nth-child(even) {
+  background: #f4f4f4;
+}
+
+.icons a {
+  font-size: 30px;
+  margin: 10px;
+  color: #333;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.icons a:hover {
+  color: #ff9800;
+  transform: scale(1.2);
+}
+
+.home-section {
+  padding-top: 120px;
+  text-align: center;
+}
+
+.profile {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 40px;
+}
+
+.profile img {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  border: 5px solid #ff9800;
+  object-fit: cover;
+  box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+}
+
+.center-line {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3px;
+  height: 50px;
+  background-color: #ff9800;
+  bottom: -50px;
+}
+
+.info-sections {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  margin-top: 60px;
+}
+
+.left-info, .right-info {
+  flex: 1;
+  padding: 20px;
+  background: #111111;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
+}
+
+.left-info h2, .right-info h2 {
+  margin-bottom: 15px;
+  color: #ff9800;
+}
+
+.left-info p, .right-info p {
+  line-height: 1.6;
+  color: white;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #ff9800;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #e68900;
+}
+
+.egitim-section {
+  background: #f4f4f4;
+  margin-top: 0px;
+}
+
+.egitim-container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 50px 20px;
+  margin-top: 10px;
+  margin-top: -70px;
+}
+
+.egitim-container h2 {
+  text-align: center;
+  margin-bottom: 50px;
+  color: white;
+}
+
+.egitim-content {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.egitim-image img {
+  width: 350px;
+  border-radius: 10px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.egitim-info {
+  flex: 1;
+  background-color: #111111;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
+}
+
+.egitim-info h3 {
+  color: #ff9800;
+  margin-bottom: 30px;
+}
+
+.egitim-info p {
+  color: white;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  nav {
+    display: none;
+    flex-direction: column;
+    background: #333;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+  }
+
+  nav.show {
+    display: flex;
+  }
+
+  nav a {
+    padding: 10px;
+    border-bottom: 1px solid #444;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+
+  .info-sections {
+    flex-direction: column;
+  }
+
+  .egitim-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .egitim-image img {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+.projeler-section {
+  text-align: center;
+  padding: 0px 20px;
+  background: #fafafa;
+}
+
+.projeler-section h2 {
+  color: white;
+  margin-bottom: 40px;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.project-card {
+  background: #111111;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+.project-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.project-card h3 {
+  margin: 15px 0 10px;
+  color: #ff9800;
+}
+
+.project-card p {
+  padding: 0 15px;
+  font-size: 14px;
+  color: white;
+}
+
+.project-card .btn {
+  display: inline-block;
+  margin: 10px 5px 20px;
+  padding: 8px 15px;
+  background: #ff9800;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: background 0.3s;
+}
+
+.project-card .btn:hover {
+  background: #e68900;
+}
+
+.project-card .btn-github {
+  background: #333;
+}
+
+.project-card .btn-github:hover {
+  background: #000;
+}
+
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+#iletisim {
+  text-align: center;
+  padding: 140px 20px;
+}
+
+#iletisim h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #ff9800;
+  letter-spacing: 1px;
+  position: relative;
+  bottom: 40px;
+}
+
+#iletisim h2::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 3px;
+  background: #ff9800;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+.icons {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.icons a {
+  font-size: 32px;
+  color: #333;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease, background 0.3s ease;
+}
+
+.icons a:hover {
+  color: white;
+  transform: scale(1.15);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.icons a:nth-child(1):hover { background: #25D366; }
+.icons a:nth-child(2):hover { background: #E1306C; }
+.icons a:nth-child(3):hover { background: #0A66C2; }
+.icons a:nth-child(4):hover { background: #D44638; }
